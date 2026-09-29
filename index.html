@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saveurs du Maroc — Cuisine marocaine authentique · Nîmes</title>
+<meta name="description" content="Saveurs du Maroc, restaurant marocain traditionnel à Nîmes : tajines, couscous, pastillas, harira, msemen et thé à la menthe. Ouvert 7j/7 de 07:00 à 00:00. Réservation sur WhatsApp.">
+<meta name="theme-color" content="#0f3d2e">
+<link rel="icon" href="assets/img/favicon.png">
+<meta property="og:title" content="Saveurs du Maroc — Nîmes">
+<meta property="og:description" content="Cuisine marocaine authentique. Tajines, couscous, pastillas. Ouvert 7j/7, 07:00–00:00.">
+<meta property="og:image" content="assets/video/hero-tajine-poster.jpg">
+<link rel="preload" href="assets/fonts/cinzel-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/great-vibes-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<script>
+  /* apply saved theme / language before paint */
+  (function () {
+    var t, l;
+    try { t = localStorage.getItem('sdm-theme'); l = localStorage.getItem('sdm-lang'); } catch (e) {}
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (!l) l = (navigator.language || 'fr').slice(0, 2) === 'en' ? 'en' : 'fr';
+    document.documentElement.dataset.theme = t;
+    document.documentElement.lang = l;
+  })();
+</script>
+<style>
+:root {
+  --red: #9b1c26;
+  --red-deep: #6d1119;
+  --green: #0f5c43;
+  --green-deep: #0a3d2d;
+  --gold: #c9a24a;
+  --gold-soft: #e3c77e;
+  --gold-deep: #9c7a2c;
+
+  --bg: #f6ecd8;
+  --bg-2: #efe1c4;
+  --surface: #fffaf0;
+  --surface-2: #f9efdc;
+  --ink: #2a1a12;
+  --ink-soft: #6b5443;
+  --line: rgba(156, 122, 44, .35);
+  --shadow: 0 18px 50px -20px rgba(80, 40, 10, .35);
+  --blob-1: rgba(155, 28, 38, .20);
+  --blob-2: rgba(15, 92, 67, .20);
+  --blob-3: rgba(201, 162, 74, .28);
+  --pattern-opacity: .09;
+
+  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --font-body: 'Amiri', Georgia, serif;
+  --font-kufi: 'Reem Kufi', 'Cinzel', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-arabic: 'Aref Ruqaa', 'Amiri', serif;
+  --radius: 18px;
+  --wa: #25d366;
+}
+[data-theme="dark"] {
+  --bg: #0c0a08;
+  --bg-2: #14100c;
+  --surface: #17120d;
+  --surface-2: #1e1811;
+  --ink: #f3e7cf;
+  --ink-soft: #bba88a;
+  --line: rgba(201, 162, 74, .28);
+  --shadow: 0 18px 50px -20px rgba(0, 0, 0, .8);
+  --blob-1: rgba(155, 28, 38, .28);
+  --blob-2: rgba(15, 92, 67, .30);
+  --blob-3: rgba(201, 162, 74, .14);
+  --pattern-opacity: .06;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  overflow-x: hidden;
+  transition: background-color .5s ease, color .5s ease;
+}
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- living background: drifting colour blobs + zellige ---------- */
+.bg-live { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+.bg-live span {
+  position: absolute; width: 60vmax; height: 60vmax; border-radius: 50%;
+  filter: blur(70px); opacity: .9; animation: drift 26s ease-in-out infinite alternate;
+}
+.bg-live span:nth-child(1) { background: var(--blob-1); top: -20vmax; left: -15vmax; }
+.bg-live span:nth-child(2) { background: var(--blob-2); bottom: -25vmax; right: -20vmax; animation-duration: 32s; animation-delay: -8s; }
+.bg-live span:nth-child(3) { background: var(--blob-3); top: 30%; left: 35%; width: 40vmax; height: 40vmax; animation-duration: 22s; animation-delay: -4s; }
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(8vmax, 6vmax) scale(1.12); }
+  100% { transform: translate(-6vmax, 10vmax) scale(.95); }
+}
+.zellige {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: var(--pattern-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23c9a24a' stroke-width='1.2'%3E%3Crect x='28' y='28' width='40' height='40'/%3E%3Crect x='28' y='28' width='40' height='40' transform='rotate(45 48 48)'/%3E%3Ccircle cx='48' cy='48' r='9'/%3E%3Cpath d='M0 0L20 20M96 0L76 20M0 96L20 76M96 96L76 76M48 0V10M48 96V86M0 48H10M96 48H86'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 96px 96px;
+}
+
+/* ---------- layout helpers ---------- */
+.wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+section { position: relative; padding: clamp(72px, 10vw, 128px) 0; }
+.eyebrow {
+  font-family: var(--font-kufi); font-weight: 600; letter-spacing: .28em; text-transform: uppercase;
+  font-size: .78rem; color: var(--gold-deep); display: inline-flex; align-items: center; gap: .8em;
+}
+[data-theme="dark"] .eyebrow { color: var(--gold); }
+.eyebrow::before, .eyebrow::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.section-head { text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 6vw, 64px); }
+.section-head h2 {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.1; margin: .35em 0 .25em; letter-spacing: .02em;
+}
+.section-head h2 .script { font-family: var(--font-script); font-weight: 400; color: var(--red); font-size: 1.25em; letter-spacing: 0; }
+[data-theme="dark"] .section-head h2 .script { color: var(--gold-soft); }
+.section-head p { color: var(--ink-soft); margin: 0; }
+.arabic { font-family: var(--font-arabic); direction: rtl; }
+.ornament { display: block; margin: 14px auto 0; width: 150px; height: 18px; color: var(--gold); }
+
+/* ---------- buttons ---------- */
+.btn {
+  --b: var(--red);
+  display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+  padding: .95em 1.6em; border-radius: 999px; border: 0; cursor: pointer; text-decoration: none;
+  font-family: var(--font-kufi); font-weight: 600; letter-spacing: .08em; font-size: .92rem; text-transform: uppercase;
+  background: var(--b); color: #fff8ea; position: relative; overflow: hidden; isolation: isolate;
+  box-shadow: 0 10px 24px -10px var(--b);
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s;
+}
+.btn::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 235, 180, .45) 50%, transparent 70%);
+  transform: translateX(-120%); transition: transform .7s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px var(--b); }
+.btn:hover::after { transform: translateX(120%); }
+.btn svg { width: 1.25em; height: 1.25em; flex: none; }
+.btn-wa { --b: #1a9e52; }
+.btn-ghost { background: transparent; color: var(--gold-soft); box-shadow: inset 0 0 0 1.5px var(--gold); }
+.btn-ghost:hover { box-shadow: inset 0 0 0 1.5px var(--gold-soft), 0 12px 26px -14px var(--gold); }
+
+/* ---------- header ---------- */
+.nav {
+  position: fixed; inset: 0 0 auto; z-index: 50; padding: 14px 0;
+  transition: background .4s, padding .4s, box-shadow .4s, backdrop-filter .4s;
+}
+.nav.scrolled {
+  padding: 8px 0; background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  box-shadow: 0 1px 0 var(--line);
+}
+.nav .wrap { display: flex; align-items: center; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; }
+.brand img { width: 46px; height: 46px; border-radius: 50%; transition: transform .6s; }
+.brand:hover img { transform: rotate(-12deg) scale(1.05); }
+.brand-name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; line-height: 1; letter-spacing: .08em; color: #fff4dc; transition: color .4s; }
+.brand-name small { display: block; font-family: var(--font-script); font-weight: 400; font-size: 1.25rem; letter-spacing: 0; color: var(--gold); margin-top: 2px; }
+.nav.scrolled .brand-name { color: var(--ink); }
+.nav-links { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  text-decoration: none; font-family: var(--font-kufi); font-weight: 500; font-size: .9rem; letter-spacing: .12em;
+  text-transform: uppercase; padding: .5em .85em; border-radius: 999px; color: #f3e5c8; position: relative; transition: color .3s;
+}
+.nav.scrolled .nav-links a { color: var(--ink); }
+.nav-links a::after {
+  content: ""; position: absolute; left: 50%; bottom: .15em; width: 0; height: 1.5px; background: var(--gold);
+  transition: width .35s, left .35s;
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 40%; left: 30%; }
+.tools { display: flex; align-items: center; gap: 8px; }
+.icon-btn {
+  width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(201, 162, 74, .55); background: rgba(0, 0, 0, .18);
+  display: grid; place-items: center; cursor: pointer; color: var(--gold-soft); transition: background .3s, transform .3s, color .3s;
+}
+.nav.scrolled .icon-btn { background: var(--surface); color: var(--gold-deep); }
+[data-theme="dark"] .nav.scrolled .icon-btn { color: var(--gold); }
+.icon-btn:hover { transform: rotate(-10deg); }
+.icon-btn svg { width: 20px; height: 20px; }
+.lang-btn { width: auto; padding: 0 14px; border-radius: 999px; font-family: var(--font-kufi); font-weight: 600; font-size: .82rem; letter-spacing: .12em; }
+.lang-btn b { color: var(--red); }
+.nav:not(.scrolled) .lang-btn b { color: #fff; }
+[data-theme="dark"] .lang-btn b { color: #fff; }
+.theme-btn .moon { display: none; }
+[data-theme="dark"] .theme-btn .sun { display: none; }
+[data-theme="dark"] .theme-btn .moon { display: block; }
+.burger { display: none; }
+
+@media (max-width: 900px) {
+  .burger { display: grid; }
+  .nav-links {
+    position: fixed; inset: 0; z-index: -1; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    background: radial-gradient(circle at 30% 20%, rgba(155, 28, 38, .55), transparent 60%),
+                radial-gradient(circle at 70% 85%, rgba(15, 92, 67, .6), transparent 60%), #0b0907;
+    clip-path: circle(0 at calc(100% - 40px) 36px); transition: clip-path .7s cubic-bezier(.7, 0, .2, 1);
+  }
+  .nav-links a, .nav.scrolled .nav-links a { color: #f6e7c9; font-size: 1.35rem; font-family: var(--font-display); }
+  body.menu-open .nav-links { clip-path: circle(150% at calc(100% - 40px) 36px); }
+  body.menu-open { overflow: hidden; }
+  body.menu-open .brand-name { color: #fff4dc; }
+  .brand-name { font-size: .92rem; }
+  .brand img { width: 40px; height: 40px; }
+}
+@media (max-width: 420px) { .brand-name small { font-size: 1.05rem; } .tools { gap: 6px; } .icon-btn { width: 38px; height: 38px; } .icon-btn.lang-btn { width: auto; padding: 0 10px; } }
+
+/* ---------- hero ---------- */
+.hero {
+  min-height: 100svh; padding: 110px 0 60px; display: grid; align-items: center; overflow: hidden; color: #f6e8cc;
+  background:
+    radial-gradient(ellipse 60% 55% at 72% 50%, rgba(201, 162, 74, .13), transparent 70%),
+    linear-gradient(125deg, #0b0806 0%, #1b0a0c 35%, #07130e 70%, #0b0806 100%);
+  background-size: 100% 100%, 300% 300%;
+  animation: heroGradient 18s ease-in-out infinite alternate;
+  isolation: isolate;
+}
+@keyframes heroGradient { from { background-position: 0 0, 0% 50%; } to { background-position: 0 0, 100% 50%; } }
+/* bottom fade; ::before so the content (later in tree order) paints above it */
+.hero::before {
+  content: ""; position: absolute; inset: auto 0 0; height: 140px; z-index: 0; pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+}
+.hero .glow { position: absolute; border-radius: 50%; filter: blur(80px); z-index: -1; animation: drift 20s ease-in-out infinite alternate; }
+.hero .glow.r { width: 46vmax; height: 46vmax; background: rgba(155, 28, 38, .45); top: -18vmax; left: -14vmax; }
+.hero .glow.g { width: 42vmax; height: 42vmax; background: rgba(15, 92, 67, .5); bottom: -20vmax; left: 30%; animation-delay: -7s; }
+/* no z-index here: the video must blend with the hero background, not an isolated group */
+.hero-grid { display: grid; grid-template-columns: 1fr 1.25fr; align-items: center; gap: clamp(10px, 3vw, 40px); position: relative; }
+.hero-copy { position: relative; }
+.hero .salam { font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--gold); line-height: 1; margin: 0 0 .1em; text-shadow: 0 0 30px rgba(201, 162, 74, .35); }
+.hero h1 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 7vw, 5.4rem); line-height: .95; letter-spacing: .04em; color: #fff4dc; }
+.hero h1 .du { display: block; font-family: var(--font-script); font-weight: 400; letter-spacing: 0; font-size: 1.05em; line-height: 1.05;
+  background: linear-gradient(100deg, var(--gold-deep), var(--gold-soft) 40%, #fff1c7 50%, var(--gold) 60%, var(--gold-deep));
+  background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shimmer 6s linear infinite; padding-right: .1em; }
+@keyframes shimmer { to { background-position: -250% 0; } }
+.hero .tagline { font-family: var(--font-kufi); letter-spacing: .3em; text-transform: uppercase; font-size: .82rem; color: var(--gold-soft); margin: 1.2em 0 .6em; }
+.hero .lead { font-size: 1.22rem; max-width: 34ch; color: #e8d7b8; margin: 0 0 1.6em; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.status {
+  display: inline-flex; align-items: center; gap: .6em; margin-top: 1.6em; padding: .45em 1em; border-radius: 999px;
+  background: rgba(255, 255, 255, .06); border: 1px solid rgba(201, 162, 74, .35); font-family: var(--font-kufi); font-size: .85rem; letter-spacing: .06em;
+}
+.status i { width: 9px; height: 9px; border-radius: 50%; background: #3ddc84; box-shadow: 0 0 0 0 rgba(61, 220, 132, .7); animation: pulse 2s infinite; }
+.status.closed i { background: #e2554f; animation: none; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(61, 220, 132, 0); } 100% { box-shadow: 0 0 0 0 rgba(61, 220, 132, 0); } }
+.hero-media { position: relative; margin-right: calc(-1 * clamp(0px, 4vw, 60px)); }
+.hero-media video {
+  width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  /* the video has a black background: screen-blend it into the hero and feather the edges */
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+  transform: scale(1.12);
+}
+.hero-media .tea {
+  position: absolute; left: 6%; bottom: 8%; z-index: 3; display: flex; align-items: center; gap: .7em;
+  padding: .7em 1.1em; border-radius: 16px; background: rgba(12, 9, 7, .72); border: 1px solid rgba(201, 162, 74, .45);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: .98rem; line-height: 1.25; animation: float 5s ease-in-out infinite;
+}
+.hero-media .tea svg { width: 34px; height: 34px; color: var(--gold); flex: none; }
+.hero-media .tea strong { font-family: var(--font-kufi); color: var(--gold-soft); letter-spacing: .06em; font-weight: 600; display: block; font-size: .85rem; text-transform: uppercase; }
+@keyframes float { 50% { transform: translateY(-8px); } }
+.lantern { position: absolute; top: 0; width: 54px; z-index: 1; transform-origin: 50% 0; animation: swing 5.5s ease-in-out infinite; pointer-events: none; }
+.lantern.l1 { left: 37%; } .lantern.l2 { right: 5%; width: 40px; animation-duration: 6.8s; animation-delay: -2s; }
+.lantern svg { width: 100%; height: auto; filter: drop-shadow(0 0 18px rgba(255, 190, 90, .6)); }
+@keyframes swing { 0%, 100% { transform: rotate(4deg); } 50% { transform: rotate(-4deg); } }
+.scroll-hint { position: absolute; left: 50%; bottom: 26px; z-index: 3; transform: translateX(-50%); width: 26px; height: 42px; border: 1.5px solid rgba(227, 199, 126, .7); border-radius: 14px; }
+.scroll-hint::after { content: ""; position: absolute; left: 50%; top: 8px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--gold-soft); animation: wheel 1.8s infinite; }
+@keyframes wheel { to { transform: translateY(14px); opacity: 0; } }
+@media (max-width: 900px) {
+  .hero { padding-top: 96px; }
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero .lead { margin-inline: auto; }
+  .hero-cta { justify-content: center; }
+  .hero-media { margin: 0 -16px; order: -1; }
+  .hero-media video { transform: scale(1.2); }
+  .hero-media .tea { left: 50%; bottom: -6px; transform: translateX(-50%); animation: none; white-space: nowrap; font-size: .9rem; }
+  .hero-media { margin-bottom: 26px; }
+  .lantern { display: none; }
+  .scroll-hint { display: none; }
+}
+
+/* ---------- marquee ---------- */
+.marquee { padding: 0; background: linear-gradient(90deg, var(--green-deep), var(--green), var(--green-deep)); color: var(--gold-soft); overflow: hidden; border-block: 1px solid var(--gold); position: relative; z-index: 2; }
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee span { font-family: var(--font-display); font-size: clamp(1.1rem, 2.4vw, 1.5rem); letter-spacing: .12em; padding: .75em 1.2em; white-space: nowrap; display: inline-flex; align-items: center; gap: 1.2em; }
+.marquee span::after { content: "✦"; color: var(--gold); font-size: .7em; }
+.marquee .arabic { font-size: 1.1em; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- signature dishes ---------- */
+.dishes { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 24px); }
+.dish {
+  position: relative; border-radius: 200px 200px var(--radius) var(--radius); background: #0b0907; color: #f5e6c8; overflow: hidden;
+  box-shadow: var(--shadow); isolation: isolate; transform-style: preserve-3d; transition: transform .5s cubic-bezier(.2, .8, .2, 1);
+  border: 1px solid rgba(201, 162, 74, .4);
+}
+.dish::before { content: ""; position: absolute; inset: 7px; border-radius: 194px 194px 13px 13px; border: 1px solid rgba(201, 162, 74, .35); pointer-events: none; z-index: 2; }
+.dish figure { margin: 0; aspect-ratio: 4 / 4.2; overflow: hidden; }
+.dish img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 1.2s cubic-bezier(.2, .8, .2, 1); }
+.dish:hover img { transform: scale(1.16) rotate(-2deg); }
+.dish .info { padding: 16px 20px 22px; text-align: center; background: linear-gradient(to top, #0b0907 60%, transparent); margin-top: -40px; position: relative; }
+.dish h3 { margin: 0 0 .15em; font-family: var(--font-display); font-weight: 700; font-size: 1.12rem; letter-spacing: .03em; line-height: 1.25; }
+.dish p { margin: 0 0 .7em; font-size: .98rem; color: #cbb896; line-height: 1.35; }
+.price-tag { display: inline-block; font-family: var(--font-kufi); font-weight: 600; letter-spacing: .06em; color: #1b120b; background: linear-gradient(135deg, var(--gold-soft), var(--gold)); padding: .25em .9em; border-radius: 999px; font-size: .95rem; }
+@media (max-width: 980px) { .dishes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) {
+  .dishes { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 16px 20px; margin: 0 -16px; scrollbar-width: none; }
+  .dishes::-webkit-scrollbar { display: none; }
+  .dish { scroll-snap-align: center; }
+}
+
+/* ---------- menu ---------- */
+.tea-ribbon {
+  display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; text-align: center;
+  margin: 0 auto 30px; padding: 14px 26px; width: fit-content; max-width: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--green-deep), var(--green)); color: #f7e9c9; border: 1px solid var(--gold);
+  font-family: var(--font-kufi); letter-spacing: .08em; font-size: .95rem; box-shadow: var(--shadow);
+}
+.tea-ribbon svg { width: 28px; height: 28px; color: var(--gold); }
+.tea-ribbon b { color: var(--gold-soft); font-weight: 600; text-transform: uppercase; }
+.tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 34px; }
+.tab {
+  border: 1px solid var(--line); background: var(--surface); padding: .55em 1.15em; border-radius: 999px; cursor: pointer;
+  font-family: var(--font-kufi); font-weight: 500; font-size: .86rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
+  transition: all .3s;
+}
+.tab:hover { color: var(--ink); border-color: var(--gold); }
+.tab[aria-pressed="true"] { background: var(--red); color: #fff5e2; border-color: var(--red); box-shadow: 0 8px 20px -10px var(--red); }
+@media (max-width: 640px) {
+  .tabs { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin: 0 -16px 28px; padding: 4px 16px; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: none; }
+  .tea-ribbon { flex-wrap: nowrap; text-align: left; border-radius: 18px; padding: 12px 18px; }
+}
+.menu-grid { columns: 3 320px; column-gap: 22px; }
+.cat {
+  break-inside: avoid; margin: 0 0 22px; padding: 26px 24px 20px; border-radius: var(--radius); background: var(--surface);
+  border: 1px solid var(--line); box-shadow: var(--shadow); position: relative; overflow: hidden;
+  transition: opacity .45s, transform .45s;
+}
+.cat::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--red), var(--gold), var(--green)); }
+.cat.hide { display: none; }
+.cat h3 { margin: 0 0 4px; display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; letter-spacing: .06em; color: var(--green); }
+[data-theme="dark"] .cat h3 { color: var(--gold-soft); }
+.cat h3 .glyph { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--red); color: var(--gold-soft); }
+.cat h3 .glyph svg { width: 20px; height: 20px; }
+.cat h3 .ar { margin-left: auto; font-family: var(--font-arabic); color: var(--gold-deep); font-size: 1.35rem; letter-spacing: 0; font-weight: 400; }
+[data-theme="dark"] .cat h3 .ar { color: var(--gold); }
+.cat .note { margin: 0 0 12px; font-size: .95rem; color: var(--ink-soft); font-style: italic; }
+.cat ul { list-style: none; padding: 0; margin: 12px 0 0; }
+.cat li { display: flex; align-items: baseline; gap: 8px; padding: 7px 0; }
+.cat li + li { border-top: 1px dashed transparent; }
+.cat .name { font-size: 1.1rem; line-height: 1.3; }
+.cat .name small { display: block; color: var(--ink-soft); font-size: .88rem; }
+.cat .dots { flex: 1; border-bottom: 2px dotted var(--line); transform: translateY(-5px); min-width: 20px; }
+.cat .price { font-family: var(--font-kufi); font-weight: 600; color: var(--red); white-space: nowrap; }
+[data-theme="dark"] .cat .price { color: var(--gold); }
+.formulas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 12px; }
+.formula {
+  position: relative; border-radius: var(--radius); padding: 30px 28px; color: #f5e7c9; overflow: hidden; border: 1px solid var(--gold);
+  background: radial-gradient(circle at 100% 0, rgba(201, 162, 74, .25), transparent 50%), linear-gradient(140deg, var(--green-deep), #062a1f);
+  box-shadow: var(--shadow);
+}
+.formula.kids { background: radial-gradient(circle at 100% 0, rgba(201, 162, 74, .25), transparent 50%), linear-gradient(140deg, var(--red), var(--red-deep)); }
+.formula h3 { margin: 0; font-family: var(--font-display); font-size: 1.5rem; letter-spacing: .06em; color: var(--gold-soft); }
+.formula .big { position: absolute; top: 22px; right: 22px; font-family: var(--font-kufi); font-weight: 600; font-size: 1.35rem; color: #1b120b; background: linear-gradient(135deg, var(--gold-soft), var(--gold)); padding: .2em .7em; border-radius: 12px; transform: rotate(4deg); }
+.formula ul { margin: 14px 0 0; padding: 0; list-style: none; }
+.formula li { padding: 4px 0 4px 26px; position: relative; }
+.formula li::before { content: "✦"; position: absolute; left: 2px; color: var(--gold); font-size: .8em; top: .55em; }
+.formula .fine { font-size: .9rem; opacity: .8; font-style: italic; margin: 10px 0 0; }
+@media (max-width: 760px) { .formulas { grid-template-columns: 1fr; } .formula h3 { padding-right: 100px; } }
+
+/* ---------- reservation ---------- */
+.reserve { overflow: hidden; }
+.reserve-card {
+  display: grid; grid-template-columns: 1fr 1.1fr; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow);
+  border: 1px solid var(--gold); background: var(--surface);
+}
+.reserve-side {
+  padding: clamp(28px, 4vw, 52px); color: #f6e7c9; position: relative; isolation: isolate;
+  background: linear-gradient(160deg, var(--red) 0%, var(--red-deep) 55%, #3a070c 100%);
+}
+.reserve-side::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .16;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 4l7 19 19 7-19 7-7 19-7-19-19-7 19-7z' fill='none' stroke='%23e3c77e' stroke-width='1'/%3E%3C/svg%3E");
+}
+.reserve-side h2 { font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.1; margin: .3em 0 .4em; color: #fff4dc; }
+.reserve-side h2 .script { font-family: var(--font-script); font-weight: 400; color: var(--gold-soft); font-size: 1.2em; }
+.reserve-side .eyebrow { color: var(--gold-soft); }
+.reserve-side p { color: #f0d9b5; }
+.reserve-side .big-ar { font-family: var(--font-arabic); font-size: clamp(3rem, 8vw, 5.5rem); color: rgba(227, 199, 126, .22); position: absolute; right: 24px; bottom: 6px; line-height: 1; z-index: -1; }
+.steps { list-style: none; padding: 0; margin: 24px 0 28px; display: grid; gap: 14px; counter-reset: s; }
+.steps li { display: flex; gap: 14px; align-items: center; counter-increment: s; }
+.steps li::before { content: counter(s); width: 34px; height: 34px; flex: none; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--gold-soft); color: var(--gold-soft); font-family: var(--font-kufi); }
+form.res { padding: clamp(24px, 4vw, 48px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; align-content: center; }
+.field { display: grid; gap: 6px; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-family: var(--font-kufi); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
+.field input, .field select, .field textarea {
+  width: 100%; font: inherit; font-size: 1.05rem; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: 12px; padding: .7em .9em; transition: border-color .3s, box-shadow .3s; min-height: 50px;
+}
+.field textarea { resize: vertical; min-height: 90px; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201, 162, 74, .2); }
+[data-theme="dark"] .field input, [data-theme="dark"] .field select { color-scheme: dark; }
+.guests { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); overflow: hidden; min-height: 50px; }
+.guests button { width: 50px; align-self: stretch; border: 0; background: transparent; cursor: pointer; font-size: 1.4rem; color: var(--red); }
+[data-theme="dark"] .guests button { color: var(--gold); }
+.guests button:hover { background: rgba(201, 162, 74, .15); }
+.guests output { flex: 1; text-align: center; font-family: var(--font-kufi); font-size: 1.1rem; }
+.form-msg { grid-column: 1 / -1; min-height: 1.4em; margin: 0; font-size: .95rem; color: var(--red); }
+form.res .btn { grid-column: 1 / -1; width: 100%; padding: 1.1em; font-size: 1rem; }
+.or-call { grid-column: 1 / -1; text-align: center; margin: 0; color: var(--ink-soft); font-size: .98rem; }
+.or-call a { color: var(--green); font-weight: 700; text-decoration: none; white-space: nowrap; }
+[data-theme="dark"] .or-call a { color: var(--gold-soft); }
+@media (max-width: 860px) { .reserve-card { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { form.res { grid-template-columns: 1fr; } }
+
+/* ---------- info / location ---------- */
+.info-grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 22px; align-items: stretch; }
+.info-cards { display: grid; gap: 18px; }
+.info-card {
+  display: flex; gap: 18px; padding: 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line);
+  box-shadow: var(--shadow); transition: transform .4s;
+}
+.info-card:hover { transform: translateY(-4px); }
+.info-card .ic { width: 52px; height: 52px; flex: none; border-radius: 50%; display: grid; place-items: center; color: var(--gold-soft); background: linear-gradient(140deg, var(--green), var(--green-deep)); }
+.info-card .ic svg { width: 24px; height: 24px; }
+.info-card h3 { margin: 0 0 4px; font-family: var(--font-display); font-size: 1.2rem; letter-spacing: .05em; }
+.info-card p { margin: 0; color: var(--ink-soft); }
+.info-card .hours { font-family: var(--font-kufi); font-size: 1.5rem; color: var(--red); letter-spacing: .04em; margin: 2px 0; }
+[data-theme="dark"] .info-card .hours { color: var(--gold); }
+.info-card a.link { color: var(--green); font-weight: 700; text-decoration: none; display: inline-flex; gap: .3em; margin-top: 6px; }
+[data-theme="dark"] .info-card a.link { color: var(--gold-soft); }
+.info-card a.link:hover { text-decoration: underline; }
+.map {
+  position: relative; border-radius: 26px; overflow: hidden; min-height: 420px; border: 1px solid var(--gold); box-shadow: var(--shadow);
+  background: var(--surface-2);
+}
+.map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: sepia(.25) saturate(1.1); }
+[data-theme="dark"] .map iframe { filter: invert(.9) hue-rotate(180deg) sepia(.25) saturate(.9) brightness(.95); }
+.map .pin-card {
+  position: absolute; left: 16px; bottom: 16px; right: 16px; max-width: 360px; display: flex; align-items: center; gap: 12px; justify-content: space-between;
+  background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  padding: 12px 14px 12px 18px; border-radius: 16px; border: 1px solid var(--line);
+}
+.map .pin-card strong { font-family: var(--font-display); display: block; line-height: 1.2; }
+.map .pin-card span { font-size: .92rem; color: var(--ink-soft); }
+.map .pin-card .btn { padding: .7em 1em; font-size: .78rem; flex: none; }
+@media (max-width: 860px) { .info-grid { grid-template-columns: 1fr; } .map { min-height: 360px; } }
+
+/* ---------- footer ---------- */
+footer { padding: 70px 0 110px; text-align: center; background: linear-gradient(180deg, transparent, rgba(15, 92, 67, .12)); border-top: 1px solid var(--line); }
+footer img { width: 150px; margin: 0 auto 12px; }
+footer .ar { font-family: var(--font-arabic); font-size: 1.8rem; color: var(--gold-deep); margin: 0; }
+[data-theme="dark"] footer .ar { color: var(--gold); }
+footer p { color: var(--ink-soft); margin: .3em 0; }
+footer .foot-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin: 18px 0; font-family: var(--font-kufi); letter-spacing: .1em; text-transform: uppercase; font-size: .85rem; }
+footer .foot-links a { text-decoration: none; color: var(--ink); }
+footer .foot-links a:hover { color: var(--red); }
+footer small { color: var(--ink-soft); font-size: .85rem; }
+
+/* ---------- floating WhatsApp ---------- */
+.wa-fab {
+  position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 60;
+  display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff;
+  background: var(--wa); border-radius: 999px; padding: 12px; box-shadow: 0 14px 30px -10px rgba(37, 211, 102, .7);
+  transition: transform .3s, padding .4s;
+}
+.wa-fab svg { width: 32px; height: 32px; }
+.wa-fab .lbl { max-width: 0; overflow: hidden; white-space: nowrap; font-family: var(--font-kufi); font-weight: 600; letter-spacing: .06em; transition: max-width .5s ease, margin .5s; }
+.wa-fab:hover .lbl, .wa-fab.peek .lbl { max-width: 180px; margin-right: 8px; }
+.wa-fab::before { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 0 rgba(37, 211, 102, .6); animation: waPulse 2.6s infinite; }
+@keyframes waPulse { 70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+.wa-fab:hover { transform: translateY(-3px); }
+
+/* ---------- reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(34px); filter: blur(6px); transition: opacity 1s cubic-bezier(.2, .8, .2, 1), transform 1s cubic-bezier(.2, .8, .2, 1), filter 1s; transition-delay: var(--d, 0s); }
+.reveal.in { opacity: 1; transform: none; filter: none; }
+.no-js .reveal { opacity: 1; transform: none; filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; filter: none; }
+}
+</style>
+</head>
+<body class="no-js">
+<div class="bg-live" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="zellige" aria-hidden="true"></div>
+
+<!-- shared SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.36 4 14.97c0 2.11.56 4.17 1.62 5.99L4 29l8.25-2.15a12.1 12.1 0 0 0 3.79.61h.01c6.63 0 12.03-5.36 12.03-11.97C28.08 8.36 22.68 3 16.04 3Zm0 21.9h-.01c-1.2 0-2.39-.23-3.5-.68l-.5-.2-4.9 1.27 1.3-4.75-.33-.5a9.87 9.87 0 0 1-1.6-5.37c0-5.49 4.49-9.95 10.03-9.95 5.53 0 10.02 4.46 10.02 9.95 0 5.49-4.5 9.95-10.03 9.95Zm5.5-7.45c-.3-.15-1.78-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.49a9 9 0 0 1-1.67-2.07c-.18-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.62-.93-2.22-.24-.58-.5-.5-.68-.51h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.22 1.37.19 1.88.12.58-.09 1.78-.72 2.03-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.5l2.6 5.3 5.8-2.2-2.2 5.8 5.3 2.6-5.3 2.6 2.2 5.8-5.8-2.2L12 22.5l-2.6-5.3-5.8 2.2 2.2-5.8L.5 12l5.3-2.6-2.2-5.8 5.8 2.2z"/></symbol>
+  <symbol id="i-tajine" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 3h3M11 3v2.2M13 3v2.2"/><path d="M11 5.2 5.5 15h13L13 5.2z"/><path d="M3 15h18M4.5 15c.6 3 3.6 4.5 7.5 4.5s6.9-1.5 7.5-4.5"/></g></symbol>
+  <symbol id="i-tea" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v1.5M10.5 4h3l.8 2.2c2.6.9 4.2 3 4.2 5.8 0 3.3-2.9 6-6.5 6s-6.5-2.7-6.5-6c0-2.8 1.6-4.9 4.2-5.8z"/><path d="M18.5 10.5c1.8-.4 3 .6 3 2s-1.4 2.2-3.3 2.4M5.7 10.8 2.5 8"/><path d="M6 21h12"/></g></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11h18c0 4.4-3.6 8-8 8h-2c-4.4 0-8-3.6-8-8zM8 21h8"/><path d="M9 3c-1 1.3 1 2.2 0 3.5M12.5 3c-1 1.3 1 2.2 0 3.5M16 3c-1 1.3 1 2.2 0 3.5"/></g></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C4 11 9 4 20 4c0 11-7 16-15 15z"/><path d="M5 19 13 11"/></g></symbol>
+  <symbol id="i-pie" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 15l9-9 9 9-9 4z"/><path d="M7.5 13.5l4.5 1.8 4.5-1.8M12 6v9.3"/></g></symbol>
+  <symbol id="i-sweet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></g></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l-1.5 17a1.5 1.5 0 0 1-1.5 1.4H9a1.5 1.5 0 0 1-1.5-1.4z"/><path d="M6.5 8.5h11"/></g></symbol>
+  <symbol id="i-bread" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 12h16M12 5v14"/></g></symbol>
+  <symbol id="i-couscous" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 13h18c0 3.9-4 6.5-9 6.5S3 16.9 3 13z"/><path d="M6.5 13c.5-3.3 2.8-5.5 5.5-5.5s5 2.2 5.5 5.5"/><path d="M12 4.5v1.5"/></g></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Saveurs du Maroc">
+      <img src="assets/img/logo.webp" alt="" width="46" height="46">
+      <span class="brand-name">SAVEURS<small>du Maroc</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#specialites" data-i18n="nav.dishes">Spécialités</a></li>
+      <li><a href="#carte" data-i18n="nav.menu">La carte</a></li>
+      <li><a href="#reserver" data-i18n="nav.book">Réserver</a></li>
+      <li><a href="#infos" data-i18n="nav.info">Nous trouver</a></li>
+    </ul>
+    <div class="tools">
+      <button class="icon-btn lang-btn" id="langBtn" type="button" aria-label="Changer de langue / Change language"><span><b>FR</b> / EN</span></button>
+      <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Mode sombre / Dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/><path d="M16.5 3.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z" fill="currentColor"/></svg>
+      </button>
+      <button class="icon-btn burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="b1" d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <span class="glow r"></span><span class="glow g"></span>
+    <div class="lantern l1" aria-hidden="true">
+      <svg viewBox="0 0 60 190"><path d="M30 0v70" stroke="#c9a24a" stroke-width="1.5"/><path d="M22 70h16l-3 8H25z" fill="#9c7a2c"/><path d="M18 78h24l6 22-6 38H18l-6-38z" fill="#c9a24a"/><path d="M21 84h18l4 16-4 32H21l-4-32z" fill="#ffcb6b" opacity=".9"/><path d="M30 84v48M21 100h18M19 116h22" stroke="#9c7a2c" stroke-width="1.4"/><path d="M16 138h28l-4 10H20z" fill="#9c7a2c"/><path d="M26 148h8l-4 14z" fill="#c9a24a"/></svg>
+    </div>
+    <div class="lantern l2" aria-hidden="true">
+      <svg viewBox="0 0 60 190"><path d="M30 0v70" stroke="#c9a24a" stroke-width="1.5"/><path d="M22 70h16l-3 8H25z" fill="#9c7a2c"/><path d="M18 78h24l6 22-6 38H18l-6-38z" fill="#c9a24a"/><path d="M21 84h18l4 16-4 32H21l-4-32z" fill="#ffcb6b" opacity=".9"/><path d="M30 84v48M21 100h18M19 116h22" stroke="#9c7a2c" stroke-width="1.4"/><path d="M16 138h28l-4 10H20z" fill="#9c7a2c"/><path d="M26 148h8l-4 14z" fill="#c9a24a"/></svg>
+    </div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="salam arabic reveal" lang="ar">أهلا و سهلا</p>
+        <h1 id="heroTitle" class="reveal" style="--d:.1s">Saveurs <span class="du">du Maroc</span></h1>
+        <p class="tagline reveal" style="--d:.2s" data-i18n="hero.tagline">Cuisine marocaine authentique · Nîmes</p>
+        <p class="lead reveal" style="--d:.3s" data-i18n="hero.lead">Tajines mijotés, couscous du vendredi et pastillas dorées, servis avec le thé à la menthe, comme à la maison.</p>
+        <div class="hero-cta reveal" style="--d:.4s">
+          <a class="btn btn-wa" data-wa href="https://wa.me/33754096567" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-i18n="cta.book">Réserver sur WhatsApp</span></a>
+          <a class="btn btn-ghost" href="#carte" data-i18n="cta.menu">Voir la carte</a>
+        </div>
+        <div class="status reveal" style="--d:.5s" id="status" role="status"><i></i><span id="statusText">Ouvert 7j/7 · 07:00 – 00:00</span></div>
+      </div>
+      <div class="hero-media reveal" style="--d:.15s">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/video/hero-tajine-poster.jpg" aria-label="Tajine qui tourne et révèle nos plats">
+          <source src="assets/video/hero-tajine-loop.webm" type="video/webm">
+          <source src="assets/video/hero-tajine-loop.mp4" type="video/mp4">
+        </video>
+        <div class="tea"><svg><use href="#i-tea"/></svg><div><strong data-i18n="tea.title">Thé offert</strong><span data-i18n="tea.text">avec chaque tajine</span></div></div>
+      </div>
+    </div>
+    <span class="scroll-hint" aria-hidden="true"></span>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Tajine</span><span class="arabic">طاجين</span><span>Couscous</span><span class="arabic">كسكس</span><span>Pastilla</span><span>Harira</span><span class="arabic">حريرة</span><span>Msemen</span><span data-i18n="marquee.tea">Thé à la menthe</span><span class="arabic">أتاي</span>
+      <span>Tajine</span><span class="arabic">طاجين</span><span>Couscous</span><span class="arabic">كسكس</span><span>Pastilla</span><span>Harira</span><span class="arabic">حريرة</span><span>Msemen</span><span data-i18n="marquee.tea">Thé à la menthe</span><span class="arabic">أتاي</span>
+    </div>
+  </div>
+
+  <!-- SIGNATURE DISHES -->
+  <section id="specialites" aria-labelledby="dishesTitle">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="dishes.eyebrow">Nos spécialités</span>
+        <h2 id="dishesTitle"><span data-i18n="dishes.title1">Le goût de</span> <span class="script" data-i18n="dishes.title2">la maison</span></h2>
+        <p data-i18n="dishes.text">Mijotés lentement dans l'argile, parfumés au ras el hanout, au safran et au citron confit.</p>
+        <svg class="ornament" viewBox="0 0 150 18"><path d="M0 9h58M92 9h58" stroke="currentColor"/><use href="#i-star" x="66" y="0" width="18" height="18"/></svg>
+      </div>
+      <div class="dishes" id="dishes"></div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="carte" aria-labelledby="menuTitle">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="menu.eyebrow">Notre carte</span>
+        <h2 id="menuTitle"><span data-i18n="menu.title1">À la table</span> <span class="script" data-i18n="menu.title2">du Maroc</span></h2>
+        <p data-i18n="menu.text">Des salades fraîches aux pâtisseries orientales, tout est préparé chaque jour.</p>
+      </div>
+      <div class="tea-ribbon reveal"><svg><use href="#i-tea"/></svg><span><b data-i18n="tea.title">Thé offert</b> <span data-i18n="tea.ribbon">par la maison avec chaque tajine</span></span></div>
+      <div class="tabs reveal" role="toolbar" aria-label="Catégories" id="tabs"></div>
+      <div class="menu-grid" id="menuGrid"></div>
+      <div class="formulas" id="formulas"></div>
+    </div>
+  </section>
+
+  <!-- RESERVATION -->
+  <section id="reserver" class="reserve" aria-labelledby="resTitle">
+    <div class="wrap">
+      <div class="reserve-card reveal">
+        <div class="reserve-side">
+          <span class="eyebrow" data-i18n="res.eyebrow">Réservation</span>
+          <h2 id="resTitle"><span data-i18n="res.title1">Votre table</span> <span class="script" data-i18n="res.title2">vous attend</span></h2>
+          <p data-i18n="res.text">Réservez en quelques secondes : remplissez le formulaire, nous recevons votre demande sur WhatsApp et vous confirmons rapidement.</p>
+          <ol class="steps">
+            <li data-i18n="res.s1">Choisissez la date, l'heure et le nombre de convives</li>
+            <li data-i18n="res.s2">Envoyez le message pré-rempli sur WhatsApp</li>
+            <li data-i18n="res.s3">Nous confirmons votre table</li>
+          </ol>
+          <span class="big-ar" aria-hidden="true">مرحبا</span>
+        </div>
+        <form class="res" id="resForm" novalidate>
+          <div class="field full">
+            <label for="fName" data-i18n="f.name">Nom</label>
+            <input id="fName" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="fDate" data-i18n="f.date">Date</label>
+            <input id="fDate" name="date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="fTime" data-i18n="f.time">Heure</label>
+            <select id="fTime" name="time" required></select>
+          </div>
+          <div class="field full">
+            <label id="gLbl" data-i18n="f.guests">Nombre de personnes</label>
+            <div class="guests" role="group" aria-labelledby="gLbl">
+              <button type="button" id="gMinus" aria-label="−">−</button>
+              <output id="gOut" aria-live="polite">2</output>
+              <button type="button" id="gPlus" aria-label="+">+</button>
+            </div>
+          </div>
+          <div class="field full">
+            <label for="fNote" data-i18n="f.note">Message (facultatif)</label>
+            <textarea id="fNote" name="note" data-i18n-ph="f.notePh" placeholder="Anniversaire, chaise bébé, allergies…"></textarea>
+          </div>
+          <p class="form-msg" id="formMsg" role="alert"></p>
+          <button class="btn btn-wa" type="submit"><svg><use href="#i-wa"/></svg><span data-i18n="f.submit">Envoyer ma réservation</span></button>
+          <p class="or-call"><span data-i18n="f.or">Ou écrivez-nous directement :</span> <a data-wa href="https://wa.me/33754096567" target="_blank" rel="noopener">+33 7 54 09 65 67</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section id="infos" aria-labelledby="infoTitle">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="info.eyebrow">Nous trouver</span>
+        <h2 id="infoTitle"><span data-i18n="info.title1">Au cœur de</span> <span class="script">Nîmes</span></h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-cards">
+          <div class="info-card reveal">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+            <div><h3 data-i18n="info.hours">Horaires</h3><p class="hours">07:00 – 00:00</p><p data-i18n="info.days">Tous les jours, 7j/7</p></div>
+          </div>
+          <div class="info-card reveal" style="--d:.1s">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <div><h3 data-i18n="info.address">Adresse</h3><p>13 rue de la République<br>30900 Nîmes</p>
+              <a class="link" id="mapsLink" href="https://www.google.com/maps/place/Saveurs+du+maroc/@43.8315652,4.3574346,17z/data=!3m1!4b1!4m6!3m5!1s0x12b42d76d7df24b3:0xad72747fe9b96bd8!8m2!3d43.8315652!4d4.3574346!16s%2Fg%2F11zxp7_wdr" target="_blank" rel="noopener" data-i18n="info.route">Itinéraire →</a></div>
+          </div>
+          <div class="info-card reveal" style="--d:.2s">
+            <span class="ic"><svg><use href="#i-wa"/></svg></span>
+            <div><h3 data-i18n="info.book">Réservations</h3><p data-i18n="info.bookText">Sur WhatsApp, à toute heure d'ouverture</p>
+              <a class="link" data-wa href="https://wa.me/33754096567" target="_blank" rel="noopener">+33 7 54 09 65 67</a></div>
+          </div>
+        </div>
+        <div class="map reveal" style="--d:.1s">
+          <iframe title="Saveurs du Maroc – Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Saveurs%20du%20Maroc%2C%2013%20rue%20de%20la%20R%C3%A9publique%2C%2030900%20N%C3%AEmes&ll=43.8315652,4.3574346&z=17&output=embed"></iframe>
+          <div class="pin-card"><div><strong>Saveurs du Maroc</strong><span>13 rue de la République, Nîmes</span></div>
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=43.8315652,4.3574346" target="_blank" rel="noopener" data-i18n="info.go">Y aller</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/img/logo.webp" alt="Saveurs du Maroc" width="150" height="150" loading="lazy">
+    <p class="ar" lang="ar">بالصحة و الراحة</p>
+    <p data-i18n="foot.text">Cuisine marocaine authentique · 13 rue de la République, 30900 Nîmes</p>
+    <p data-i18n="foot.hours">Ouvert tous les jours de 07:00 à 00:00</p>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#specialites" data-i18n="nav.dishes">Spécialités</a>
+      <a href="#carte" data-i18n="nav.menu">La carte</a>
+      <a href="#reserver" data-i18n="nav.book">Réserver</a>
+      <a href="#infos" data-i18n="nav.info">Nous trouver</a>
+    </nav>
+    <small>© <span id="year"></span> Saveurs du Maroc</small>
+  </div>
+</footer>
+
+<a class="wa-fab" id="waFab" data-wa href="https://wa.me/33754096567" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg><use href="#i-wa"/></svg><span class="lbl" data-i18n="fab">Réserver</span>
+</a>
+
+<script>
+(function () {
+  'use strict';
+  document.body.classList.remove('no-js');
+  var WA = '33754096567';
+  var root = document.documentElement;
+
+  /* ------------------------------------------------ translations */
+  var T = {
+    fr: {
+      'nav.dishes': 'Spécialités', 'nav.menu': 'La carte', 'nav.book': 'Réserver', 'nav.info': 'Nous trouver',
+      'hero.tagline': 'Cuisine marocaine authentique · Nîmes',
+      'hero.lead': 'Tajines mijotés, couscous généreux et pastillas dorées, servis avec le thé à la menthe, comme à la maison.',
+      'cta.book': 'Réserver sur WhatsApp', 'cta.menu': 'Voir la carte',
+      'tea.title': 'Thé offert', 'tea.text': 'avec chaque tajine', 'tea.ribbon': 'par la maison avec chaque tajine',
+      'marquee.tea': 'Thé à la menthe',
+      'status.open': 'Ouvert maintenant · jusqu\'à 00:00', 'status.closed': 'Fermé · ouvre à 07:00',
+      'dishes.eyebrow': 'Nos spécialités', 'dishes.title1': 'Le goût de', 'dishes.title2': 'la maison',
+      'dishes.text': 'Mijotés lentement dans l\'argile, parfumés au ras el hanout, au safran et au citron confit.',
+      'menu.eyebrow': 'Notre carte', 'menu.title1': 'À la table', 'menu.title2': 'du Maroc',
+      'menu.text': 'Des salades fraîches aux pâtisseries orientales, tout est préparé chaque jour.',
+      'menu.all': 'Tout', 'menu.formulas': 'Formules',
+      'res.eyebrow': 'Réservation', 'res.title1': 'Votre table', 'res.title2': 'vous attend',
+      'res.text': 'Réservez en quelques secondes : remplissez le formulaire, nous recevons votre demande sur WhatsApp et vous confirmons rapidement.',
+      'res.s1': 'Choisissez la date, l\'heure et le nombre de convives', 'res.s2': 'Envoyez le message pré-rempli sur WhatsApp', 'res.s3': 'Nous confirmons votre table',
+      'f.name': 'Nom', 'f.date': 'Date', 'f.time': 'Heure', 'f.guests': 'Nombre de personnes', 'f.note': 'Message (facultatif)',
+      'f.notePh': 'Anniversaire, chaise bébé, allergies…', 'f.submit': 'Envoyer ma réservation', 'f.or': 'Ou écrivez-nous directement :',
+      'f.errName': 'Merci d\'indiquer votre nom.', 'f.errDate': 'Merci de choisir une date (aujourd\'hui ou plus tard).', 'f.errTime': 'Cette heure est déjà passée, choisissez-en une autre.',
+      'info.eyebrow': 'Nous trouver', 'info.title1': 'Au cœur de', 'info.hours': 'Horaires', 'info.days': 'Tous les jours, 7j/7',
+      'info.address': 'Adresse', 'info.route': 'Itinéraire →', 'info.book': 'Réservations', 'info.bookText': 'Sur WhatsApp, pendant nos heures d\'ouverture', 'info.go': 'Y aller',
+      'foot.text': 'Cuisine marocaine authentique · 13 rue de la République, 30900 Nîmes', 'foot.hours': 'Ouvert tous les jours de 07:00 à 00:00',
+      'fab': 'Réserver',
+      'wa.hello': 'Bonjour Saveurs du Maroc ! Je souhaite réserver une table.', 'wa.name': 'Nom', 'wa.date': 'Date', 'wa.time': 'Heure', 'wa.guests': 'Personnes', 'wa.note': 'Message',
+      'wa.quick': 'Bonjour Saveurs du Maroc ! Je souhaite réserver une table.',
+      'kids': 'Menu Enfant', 'student': 'Menu Étudiant'
+    },
+    en: {
+      'nav.dishes': 'Specialities', 'nav.menu': 'Menu', 'nav.book': 'Book', 'nav.info': 'Find us',
+      'hero.tagline': 'Authentic Moroccan cuisine · Nîmes',
+      'hero.lead': 'Slow-cooked tajines, generous couscous and golden pastillas, served with mint tea, just like at home.',
+      'cta.book': 'Book on WhatsApp', 'cta.menu': 'See the menu',
+      'tea.title': 'Free mint tea', 'tea.text': 'with every tajine', 'tea.ribbon': 'on the house with every tajine',
+      'marquee.tea': 'Mint tea',
+      'status.open': 'Open now · until midnight', 'status.closed': 'Closed · opens at 07:00',
+      'dishes.eyebrow': 'Our specialities', 'dishes.title1': 'A taste of', 'dishes.title2': 'home',
+      'dishes.text': 'Slowly simmered in clay, scented with ras el hanout, saffron and preserved lemon.',
+      'menu.eyebrow': 'Our menu', 'menu.title1': 'At the', 'menu.title2': 'Moroccan table',
+      'menu.text': 'From fresh salads to oriental pastries, everything is made fresh every day.',
+      'menu.all': 'All', 'menu.formulas': 'Set menus',
+      'res.eyebrow': 'Reservation', 'res.title1': 'Your table', 'res.title2': 'is waiting',
+      'res.text': 'Book in seconds: fill in the form, we receive your request on WhatsApp and confirm quickly.',
+      'res.s1': 'Pick the date, time and number of guests', 'res.s2': 'Send the pre-filled message on WhatsApp', 'res.s3': 'We confirm your table',
+      'f.name': 'Name', 'f.date': 'Date', 'f.time': 'Time', 'f.guests': 'Number of guests', 'f.note': 'Message (optional)',
+      'f.notePh': 'Birthday, high chair, allergies…', 'f.submit': 'Send my booking', 'f.or': 'Or message us directly:',
+      'f.errName': 'Please enter your name.', 'f.errDate': 'Please choose a date (today or later).', 'f.errTime': 'That time has already passed, please pick another.',
+      'info.eyebrow': 'Find us', 'info.title1': 'In the heart of', 'info.hours': 'Opening hours', 'info.days': 'Every day, 7 days a week',
+      'info.address': 'Address', 'info.route': 'Directions →', 'info.book': 'Bookings', 'info.bookText': 'On WhatsApp, during opening hours', 'info.go': 'Directions',
+      'foot.text': 'Authentic Moroccan cuisine · 13 rue de la République, 30900 Nîmes', 'foot.hours': 'Open every day from 07:00 to midnight',
+      'fab': 'Book a table',
+      'wa.hello': 'Hello Saveurs du Maroc! I would like to book a table.', 'wa.name': 'Name', 'wa.date': 'Date', 'wa.time': 'Time', 'wa.guests': 'Guests', 'wa.note': 'Message',
+      'wa.quick': 'Hello Saveurs du Maroc! I would like to book a table.',
+      'kids': 'Kids Menu', 'student': 'Student Menu'
+    }
+  };
+
+  /* ------------------------------------------------ menu data (prices in €) */
+  var DISHES = [
+    { img: '1-tajine-viande-pruneaux', price: '9,5', fr: ['Tajine de bœuf aux pruneaux', 'Bœuf fondant, pruneaux caramélisés, amandes et sésame'], en: ['Beef tajine with prunes', 'Tender beef, caramelised prunes, almonds and sesame'] },
+    { img: '2-tajine-poulet-olives', price: '9', fr: ['Tajine poulet olive citron', 'Poulet au citron confit, olives vertes et frites maison'], en: ['Chicken, olive & lemon tajine', 'Chicken with preserved lemon, green olives and homemade fries'] },
+    { img: '3-couscous-legumes', price: '9', fr: ['Couscous au choix', 'Semoule fine, sept légumes, pois chiches et viande au choix'], en: ['Couscous of your choice', 'Fine semolina, seven vegetables, chickpeas and your choice of meat'] },
+    { img: '4-tajine-kefta', price: '9,5', fr: ['Tajine de kefta', 'Boulettes épicées mijotées en sauce tomate, frites maison'], en: ['Kefta tajine', 'Spiced meatballs simmered in tomato sauce, homemade fries'] }
+  ];
+  var MENU = [
+    { id: 'tajines', icon: 'i-tajine', ar: 'طواجن', fr: 'Tajines', en: 'Tajines', note: { fr: 'Thé à la menthe offert avec chaque tajine', en: 'Free mint tea with every tajine' }, items: [
+      ['Tajine de bœuf aux pruneaux', 'Beef with prunes', '9,5'], ['Tajine de bœuf aux légumes', 'Beef with vegetables', '9,5'], ['Tajine de kefta', 'Kefta (spiced meatballs)', '9,5'],
+      ['Tajine de merguez', 'Merguez sausage', '7,5'], ['Tajine poulet olive citron', 'Chicken, olives & preserved lemon', '9'], ['Tajine poulet aux légumes', 'Chicken with vegetables', '8,5'],
+      ['Tajine loubia', 'White bean tajine', '7,5'], ['Tajine berbère viande', 'Berber-style meat tajine', '8,5'], ['Tajine d\'agneau', 'Lamb tajine', '7,5'] ] },
+    { id: 'couscous', icon: 'i-couscous', ar: 'كسكس', fr: 'Couscous', en: 'Couscous', items: [
+      ['Couscous au choix', 'Couscous with meat of your choice', '9'], ['Couscous aux légumes', 'Vegetable couscous', '7'], ['Couscous royal', 'Royal couscous', '12'] ] },
+    { id: 'pastillas', icon: 'i-pie', ar: 'بسطيلة', fr: 'Pastillas', en: 'Pastillas', items: [
+      ['Pastilla poulet', 'Chicken pastilla', '8'], ['Pastilla crevette', 'Shrimp pastilla', '9'] ] },
+    { id: 'salades', icon: 'i-leaf', ar: 'سلطات', fr: 'Salades', en: 'Salads', items: [
+      ['Kaâbou', 'Kaâbou', '3'], ['Tchatchouka', 'Tchatchouka (grilled peppers & tomato)', '3'], ['Salade marocaine', 'Moroccan salad', '4'], ['Salade César', 'Caesar salad', '5'] ] },
+    { id: 'entrees', icon: 'i-pie', ar: 'مقبلات', fr: 'Entrées', en: 'Starters', items: [
+      ['Brick bœuf, œuf', 'Brik — beef & egg', '5'], ['Brick poulet, œuf', 'Brik — chicken & egg', '5'], ['Brick crevettes, œuf', 'Brik — shrimp & egg', '5'] ] },
+    { id: 'soupes', icon: 'i-bowl', ar: 'حساء', fr: 'Rol-Saveurs', en: 'Soups', items: [
+      ['Harira', 'Harira (tomato, lentil & chickpea soup)', '5'], ['Rassura', 'Rassura', '5'] ] },
+    { id: 'msemen', icon: 'i-bread', ar: 'مسمن', fr: 'Msemen', en: 'Msemen', items: [
+      ['Msemen nature', 'Plain msemen (flaky flatbread)', '2'], ['Msemen miel & fromage', 'Msemen with honey & cheese', '3'] ] },
+    { id: 'desserts', icon: 'i-sweet', ar: 'حلويات', fr: 'Desserts', en: 'Desserts', items: [
+      ['Orange à la cannelle', 'Orange with cinnamon', '3'], ['Pâtisserie orientale (3 pcs)', 'Oriental pastries (3 pcs)', '3'], ['Tiramisu', 'Tiramisu', '3'] ] },
+    { id: 'crepes', icon: 'i-sweet', ar: 'كريب', fr: 'Crêpes & Gaufres', en: 'Crêpes & Waffles', items: [
+      ['Crêpe au sucre', 'Sugar crêpe', '3'], ['Crêpe au chocolat', 'Chocolate crêpe', '4'], ['Gaufre nature', 'Plain waffle', '3'], ['Gaufre au choix', 'Waffle with topping of your choice', '4'] ] },
+    { id: 'jus', icon: 'i-cup', ar: 'عصائر', fr: 'Jus frais', en: 'Fresh juices', items: [
+      ['Orange', 'Orange', '2,5'], ['Pomme', 'Apple', '3,5'], ['Banane', 'Banana', '2,5'], ['Fraise', 'Strawberry', '3,5'], ['Ananas', 'Pineapple', '2,5'],
+      ['Avocat', 'Avocado', '3,5'], ['Panaché', 'Mixed fruit', '2,5'], ['Avocat & fruits secs', 'Avocado & dried fruits', '4,5'] ] },
+    { id: 'boissons', icon: 'i-tea', ar: 'مشروبات', fr: 'Boissons', en: 'Drinks', items: [
+      ['Eau minérale', 'Mineral water', '0,5'], ['Boisson chaude', 'Hot drink', '1,5'], ['Canette (33 cl)', 'Can (33 cl)', '1,5'], ['Bouteille (25 cl)', 'Bottle (25 cl)', '2,5'] ] }
+  ];
+  var TABS = [
+    { key: 'all' }, { key: 'tajines', cats: ['tajines'] }, { key: 'couscous', cats: ['couscous'] }, { key: 'pastillas', cats: ['pastillas'] },
+    { key: 'starters', cats: ['salades', 'entrees', 'soupes'], fr: 'Entrées & Soupes', en: 'Starters & Soups' },
+    { key: 'sweet', cats: ['msemen', 'desserts', 'crepes'], fr: 'Douceurs', en: 'Sweets' },
+    { key: 'drinks', cats: ['jus', 'boissons'], fr: 'Boissons', en: 'Drinks' },
+    { key: 'formulas' }
+  ];
+  var FORMULAS = [
+    { cls: 'kids', key: 'kids', fr: ['1 mini tajine poulet ou mini couscous poulet', '1 dessert', '1 boisson (jus ou soda)', '1 cadeau'], en: ['1 mini chicken tajine or mini chicken couscous', '1 dessert', '1 drink (juice or soda)', '1 gift'] },
+    { cls: 'student', key: 'student', fr: ['1 tajine ou couscous au choix', '1 boisson (canette 33 cl)', '1 pâtisserie'], en: ['1 tajine or couscous of your choice', '1 drink (33 cl can)', '1 pastry'],
+      fine: { fr: 'Offre réservée aux étudiants sur présentation de la carte.', en: 'Students only, on presentation of a valid student card.' } }
+  ];
+
+  var lang = root.lang === 'en' ? 'en' : 'fr';
+  var activeTab = 'all';
+  var t = function (k) { return (T[lang] && T[lang][k]) || T.fr[k] || k; };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+
+  function renderDishes() {
+    document.getElementById('dishes').innerHTML = DISHES.map(function (d, i) {
+      var tx = d[lang];
+      return '<article class="dish reveal" style="--d:' + (i * 0.1) + 's">' +
+        '<figure><img src="assets/img/recipes/' + d.img + '-900.webp" alt="' + esc(tx[0]) + '" loading="lazy" width="900" height="900"></figure>' +
+        '<div class="info"><h3>' + esc(tx[0]) + '</h3><p>' + esc(tx[1]) + '</p><span class="price-tag">' + d.price + ' €</span></div></article>';
+    }).join('');
+  }
+  function renderTabs() {
+    document.getElementById('tabs').innerHTML = TABS.map(function (tb) {
+      var label = tb.key === 'all' ? t('menu.all') : tb.key === 'formulas' ? t('menu.formulas') : (tb[lang] || MENU.filter(function (m) { return m.id === tb.cats[0]; })[0][lang]);
+      return '<button class="tab" type="button" data-tab="' + tb.key + '" aria-pressed="' + (tb.key === activeTab) + '">' + esc(label) + '</button>';
+    }).join('');
+  }
+  function renderMenu() {
+    document.getElementById('menuGrid').innerHTML = MENU.map(function (c, i) {
+      return '<article class="cat reveal" data-cat="' + c.id + '" style="--d:' + ((i % 3) * 0.08) + 's">' +
+        '<h3><span class="glyph"><svg><use href="#' + c.icon + '"/></svg></span>' + esc(c[lang]) + '<span class="ar" lang="ar">' + c.ar + '</span></h3>' +
+        (c.note ? '<p class="note">' + esc(c.note[lang]) + '</p>' : '') +
+        '<ul>' + c.items.map(function (it) {
+          var main = it[0], sub = lang === 'en' && it[1] !== it[0] ? '<small>' + esc(it[1]) + '</small>' : '';
+          return '<li><span class="name">' + esc(main) + sub + '</span><span class="dots"></span><span class="price">' + it[2] + ' €</span></li>';
+        }).join('') + '</ul></article>';
+    }).join('');
+    document.getElementById('formulas').innerHTML = FORMULAS.map(function (f, i) {
+      return '<article class="formula ' + f.cls + ' reveal" style="--d:' + (i * 0.1) + 's"><h3>' + esc(t(f.key)) + '</h3><span class="big">8,90 €</span>' +
+        '<ul>' + f[lang].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
+        (f.fine ? '<p class="fine">' + esc(f.fine[lang]) + '</p>' : '') + '</article>';
+    }).join('');
+    applyFilter();
+  }
+  function applyFilter() {
+    var tb = TABS.filter(function (x) { return x.key === activeTab; })[0];
+    document.querySelectorAll('.cat').forEach(function (el) {
+      el.classList.toggle('hide', !(activeTab === 'all' || (tb.cats && tb.cats.indexOf(el.dataset.cat) > -1)));
+    });
+    document.getElementById('menuGrid').style.display = activeTab === 'formulas' ? 'none' : '';
+    document.getElementById('formulas').style.display = (activeTab === 'all' || activeTab === 'formulas') ? '' : 'none';
+    document.querySelectorAll('#menuGrid .reveal, #formulas .reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+  document.getElementById('tabs').addEventListener('click', function (e) {
+    var b = e.target.closest('.tab'); if (!b) return;
+    activeTab = b.dataset.tab;
+    document.querySelectorAll('.tab').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+    applyFilter();
+  });
+
+  /* ------------------------------------------------ language */
+  function applyLang() {
+    root.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t(el.dataset.i18n); });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (el) { el.placeholder = t(el.dataset.i18nPh); });
+    document.getElementById('langBtn').innerHTML = lang === 'fr' ? '<span><b>FR</b> / EN</span>' : '<span>FR / <b>EN</b></span>';
+    document.title = lang === 'fr' ? 'Saveurs du Maroc — Cuisine marocaine authentique · Nîmes' : 'Saveurs du Maroc — Authentic Moroccan cuisine · Nîmes';
+    renderDishes(); renderTabs(); renderMenu(); updateStatus(); fillTimes(); updateWaLinks();
+    observeReveals();
+  }
+  document.getElementById('langBtn').addEventListener('click', function () {
+    lang = lang === 'fr' ? 'en' : 'fr';
+    try { localStorage.setItem('sdm-lang', lang); } catch (e) {}
+    applyLang();
+  });
+
+  /* ------------------------------------------------ theme */
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('sdm-theme', next); } catch (e) {}
+  });
+
+  /* ------------------------------------------------ nav */
+  var nav = document.getElementById('nav'), burger = document.getElementById('burger');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  burger.addEventListener('click', function () {
+    var open = document.body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  document.getElementById('navLinks').addEventListener('click', function (e) {
+    if (e.target.closest('a')) { document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); }
+  });
+  var sections = ['specialites', 'carte', 'reserver', 'infos'].map(function (id) { return document.getElementById(id); });
+  if ('IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function (es) {
+      es.forEach(function (en) {
+        if (en.isIntersecting) document.querySelectorAll('.nav-links a').forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { so.observe(s); });
+  }
+
+  /* ------------------------------------------------ open / closed (Paris time) */
+  function parisNow() {
+    var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Paris', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+    var o = {}; p.forEach(function (x) { o[x.type] = x.value; });
+    return { date: o.year + '-' + o.month + '-' + o.day, h: +o.hour, m: +o.minute };
+  }
+  function updateStatus() {
+    var n = parisNow(), open = n.h >= 7;
+    var s = document.getElementById('status');
+    s.classList.toggle('closed', !open);
+    document.getElementById('statusText').textContent = t(open ? 'status.open' : 'status.closed');
+  }
+  setInterval(updateStatus, 60000);
+
+  /* ------------------------------------------------ reservation form */
+  var guests = 2, gOut = document.getElementById('gOut');
+  document.getElementById('gMinus').addEventListener('click', function () { guests = Math.max(1, guests - 1); gOut.textContent = guests; });
+  document.getElementById('gPlus').addEventListener('click', function () { guests = Math.min(40, guests + 1); gOut.textContent = guests; });
+  var fDate = document.getElementById('fDate'), fTime = document.getElementById('fTime');
+  var today = parisNow().date;
+  fDate.min = today; fDate.value = today;
+  function fillTimes() {
+    var keep = fTime.value, html = '';
+    var n = parisNow(), isToday = fDate.value === n.date;
+    for (var m = 7 * 60; m <= 23 * 60 + 30; m += 30) {
+      var hh = String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
+      var past = isToday && m <= n.h * 60 + n.m;
+      html += '<option value="' + hh + '"' + (past ? ' disabled' : '') + '>' + hh + '</option>';
+    }
+    fTime.innerHTML = html;
+    var opts = Array.prototype.filter.call(fTime.options, function (o) { return !o.disabled; });
+    var pref = opts.filter(function (o) { return o.value === keep; })[0] || opts.filter(function (o) { return o.value === '20:00'; })[0] || opts[0];
+    if (pref) fTime.value = pref.value;
+  }
+  fDate.addEventListener('change', fillTimes);
+  function fmtDate(iso) {
+    var d = new Date(iso + 'T12:00:00');
+    return d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  }
+  document.getElementById('resForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var msg = document.getElementById('formMsg'), name = document.getElementById('fName').value.trim();
+    msg.textContent = '';
+    if (!name) { msg.textContent = t('f.errName'); document.getElementById('fName').focus(); return; }
+    if (!fDate.value || fDate.value < parisNow().date) { msg.textContent = t('f.errDate'); fDate.focus(); return; }
+    if (!fTime.value || fTime.selectedOptions[0].disabled) { msg.textContent = t('f.errTime'); fTime.focus(); return; }
+    var note = document.getElementById('fNote').value.trim();
+    var text = t('wa.hello') + '\n\n' +
+      '• ' + t('wa.name') + ' : ' + name + '\n' +
+      '• ' + t('wa.date') + ' : ' + fmtDate(fDate.value) + '\n' +
+      '• ' + t('wa.time') + ' : ' + fTime.value + '\n' +
+      '• ' + t('wa.guests') + ' : ' + guests + (note ? '\n• ' + t('wa.note') + ' : ' + note : '');
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+  function updateWaLinks() {
+    document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t('wa.quick')); });
+  }
+
+  /* ------------------------------------------------ scroll reveals + dish tilt */
+  var ro = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); ro.unobserve(en.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }) : null;
+  function observeReveals() {
+    document.querySelectorAll('.reveal:not(.in)').forEach(function (el) { ro ? ro.observe(el) : el.classList.add('in'); });
+  }
+  var fine = matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (fine) {
+    document.getElementById('dishes').addEventListener('pointermove', function (e) {
+      var c = e.target.closest('.dish'); if (!c) return;
+      var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      c.style.transform = 'perspective(900px) rotateY(' + (x * 10) + 'deg) rotateX(' + (-y * 10) + 'deg) translateY(-6px)';
+    });
+    document.getElementById('dishes').addEventListener('pointerout', function (e) {
+      var c = e.target.closest('.dish'); if (c && !c.contains(e.relatedTarget)) c.style.transform = '';
+    });
+  }
+
+  /* WhatsApp button: show its label briefly once the hero is scrolled past */
+  var fab = document.getElementById('waFab'), peeked = false;
+  window.addEventListener('scroll', function () {
+    if (!peeked && window.scrollY > window.innerHeight * 0.8) {
+      peeked = true; fab.classList.add('peek'); setTimeout(function () { fab.classList.remove('peek'); }, 3500);
+    }
+  }, { passive: true });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  applyLang();
+})();
+</script>
+</body>
+</html>
