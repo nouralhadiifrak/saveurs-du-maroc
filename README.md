@@ -8,7 +8,7 @@ browser, or put the folder on any static host (GitHub Pages, Netlify, OVH…).
 
 ## Features
 
-- Hero with the logo on an animated red/green background.
+- Hero with the looping tajine video (`assets/video/`), blended into an animated red/green background.
 - Signature dishes, then the full menu with category filters, prices, and the Kids and Student set menus.
 - Reservation form that opens WhatsApp (+33 7 54 09 65 67) with a pre-filled message (name, date, time, guests, note).
 - Floating WhatsApp button.
@@ -29,4 +29,5 @@ browser, or put the folder on any static host (GitHub Pages, Netlify, OVH…).
 ## Assets
 
 - `assets/img/logo.webp` / `logo-full.png`: the logo without the dishes and without "Restauration rapide". Made with `tools/logo-cleanup.py`.
+- `assets/video/hero-tajine-loop.{webm,mp4}`: the hero loop. See `tools/hero-video/README.md` to regenerate it.
 - `assets/img/recipes/`: the dish photos.
