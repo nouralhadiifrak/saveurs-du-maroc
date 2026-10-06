@@ -257,9 +257,11 @@ section { position: relative; padding: clamp(72px, 10vw, 128px) 0; }
   width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
   /* the photo has a black background: screen-blend it into the hero and feather the edges */
   mix-blend-mode: screen;
-  -webkit-mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
-  mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
-  transform: scale(1.04);
+  /* light edge fade only: the photo is padded with black so the whole tajine (lid knob included) stays visible */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
 }
 .hero-media .tea {
   position: absolute; left: 6%; bottom: 8%; z-index: 3; display: flex; align-items: center; gap: .7em;
@@ -282,7 +284,6 @@ section { position: relative; padding: clamp(72px, 10vw, 128px) 0; }
   .hero .lead { margin-inline: auto; }
   .hero-cta { justify-content: center; }
   .hero-media { margin: 0 -16px; order: -1; }
-  .hero-media .hero-dish { transform: scale(1.08); }
   .hero-media .tea { left: 50%; bottom: -6px; transform: translateX(-50%); animation: none; white-space: nowrap; font-size: .9rem; }
   .hero-media { margin-bottom: 26px; }
   .lantern { display: none; }
@@ -401,6 +402,7 @@ section { position: relative; padding: clamp(72px, 10vw, 128px) 0; }
 }
 .review::before { content: "\201C"; position: absolute; top: -6px; right: 18px; font-family: var(--font-display); font-size: 5rem; line-height: 1; color: var(--gold); opacity: .35; }
 .review blockquote { margin: 0; font-size: 1.05rem; line-height: 1.55; flex: 1; }
+.review .stars-only { margin: 0; flex: 1; color: var(--ink-soft); font-style: italic; }
 .review figcaption { display: flex; align-items: center; gap: 12px; font-size: .95rem; }
 .review .avatar { width: 40px; height: 40px; flex: none; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; color: #fff5e2; background: linear-gradient(140deg, var(--red), var(--green)); }
 .review figcaption strong { display: block; font-family: var(--font-kufi); font-weight: 600; letter-spacing: .04em; }
@@ -603,7 +605,7 @@ footer small { color: var(--ink-soft); font-size: .85rem; }
         <div class="status reveal" style="--d:.5s" id="status" role="status"><i></i><span id="statusText">Ouvert 7j/7 · 07:00 – 00:00</span></div>
       </div>
       <div class="hero-media reveal" style="--d:.15s">
-        <img class="hero-dish" src="assets/img/hero-tajine.webp" alt="Tajine de bœuf aux pruneaux" width="1448" height="1086" fetchpriority="high">
+        <img class="hero-dish" src="assets/img/hero-tajine.webp" alt="Tajine de bœuf aux pruneaux" width="1768" height="1326" fetchpriority="high">
         <div class="tea"><svg><use href="#i-tea"/></svg><div><strong data-i18n="tea.title">Thé offert</strong><span data-i18n="tea.text">avec chaque tajine</span></div></div>
       </div>
     </div>
@@ -781,7 +783,13 @@ footer small { color: var(--ink-soft); font-size: .85rem; }
   /* Google rating shown above the reviews, e.g. { score: 4.8, count: 57 }. Hidden while null. */
   var RATING = null;
   /* Reviews copied from Google: { name, stars (1-5), date, text }. The section shows only the buttons while empty. */
-  var REVIEWS = [];
+  var REVIEWS = [
+    { name: 'Nouralhadi Ifrak', stars: 5, date: { fr: 'Septembre 2026', en: 'September 2026' },
+      text: 'Cuisine marocaine authentique et produits de qualité. Le Tajine est excellent et le thé à la menthe parfait pour finir le repas. Service rapide et personnel très agréable. Une valeur sûre 👏👏.' },
+    { name: 'Zakaria Kebir', stars: 5, date: { fr: 'Septembre 2026', en: 'September 2026' },
+      text: 'Très bonne découverte. Je recommande vivement.' },
+    { name: 'Rouchdi Fakir', stars: 5, date: { fr: 'Septembre 2026', en: 'September 2026' }, text: '' }
+  ];
   var root = document.documentElement;
 
   /* ------------------------------------------------ translations */
@@ -813,7 +821,7 @@ footer small { color: var(--ink-soft); font-size: .85rem; }
       'wa.quick': 'Bonjour Saveurs du Maroc ! Je souhaite réserver une table.',
       'kids': 'Menu Enfant', 'student': 'Menu Étudiant',
       'rev.eyebrow': 'Avis clients', 'rev.title1': 'Ils ont goûté,', 'rev.title2': 'ils en parlent',
-      'rev.google': 'Nos avis Google', 'rev.ig': 'Suivez-nous sur Instagram', 'rev.count': 'avis Google'
+      'rev.google': 'Nos avis Google', 'rev.ig': 'Suivez-nous sur Instagram', 'rev.count': 'avis Google', 'rev.starsOnly': 'Note laissée sur Google, sans commentaire.'
     },
     en: {
       'nav.dishes': 'Specialities', 'nav.menu': 'Menu', 'nav.book': 'Book', 'nav.info': 'Find us',
@@ -842,7 +850,7 @@ footer small { color: var(--ink-soft); font-size: .85rem; }
       'wa.quick': 'Hello Saveurs du Maroc! I would like to book a table.',
       'kids': 'Kids Menu', 'student': 'Student Menu',
       'rev.eyebrow': 'Guest reviews', 'rev.title1': 'They tasted,', 'rev.title2': 'they tell',
-      'rev.google': 'Our Google reviews', 'rev.ig': 'Follow us on Instagram', 'rev.count': 'Google reviews'
+      'rev.google': 'Our Google reviews', 'rev.ig': 'Follow us on Instagram', 'rev.count': 'Google reviews', 'rev.starsOnly': 'Rated on Google, no written comment.'
     }
   };
 
@@ -920,8 +928,8 @@ footer small { color: var(--ink-soft); font-size: .85rem; }
     }
     document.getElementById('reviews').innerHTML = REVIEWS.map(function (v, i) {
       return '<figure class="review reveal" style="--d:' + ((i % 3) * 0.1) + 's">' + stars(v.stars) +
-        '<blockquote>' + esc(v.text) + '</blockquote>' +
-        '<figcaption><span class="avatar">' + esc(v.name.charAt(0).toUpperCase()) + '</span><div><strong>' + esc(v.name) + '</strong><span>' + esc(v.date || '') + '</span></div>' +
+        (v.text ? '<blockquote>' + esc(v.text) + '</blockquote>' : '<p class="stars-only">' + esc(t('rev.starsOnly')) + '</p>') +
+        '<figcaption><span class="avatar">' + esc(v.name.charAt(0).toUpperCase()) + '</span><div><strong>' + esc(v.name) + '</strong><span>' + esc((v.date && v.date[lang]) || v.date || '') + '</span></div>' +
         '<svg class="g" aria-label="Google"><use href="#i-google"/></svg></figcaption></figure>';
     }).join('');
   }
